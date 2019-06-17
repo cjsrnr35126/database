@@ -11,7 +11,7 @@
 ### ② 데이터 처리 과정 설명 (데이터 import/export 과정, SQL 문장 등)
 
 통계청에서 데이터를 가져온 다음, 사망원인통계와 질병사인분류코드를 dbWriteTable함수를 이용하여 테이블로 만들었다. <br>
-
+<pre><code>
 #death code
 #X1= 질병사인코드, X2= 코드명/ X4= KCD, X5= KCD 코드명/X3는 공백
 dbWriteTable(conn = conn, name = "code_death", rcode6, overwrite=T, row.names=FALSE)
@@ -28,8 +28,9 @@ rs <- dbSendQuery(conn,
 )
 dbClearResult(rs)
 dbExistsTable(conn, "code_death")
-
+</code></pre>
 나이분류코드의 경우에는 그 수가 많지않아 dbCreateTable함수로 새로운 테이블을 만들고 데이터를 입력시켰다.
+<pre><code>
 #code_age table
 
 dbCreateTable(
@@ -46,7 +47,7 @@ rs <- dbSendQuery(conn,
                   (\'01\',
                   \'1~4\')")
 dbClearResult(rs)
-
+</code></pre>
 
 ③ 데이터 요약 (요약 통계량, 표/그래프 활용)
 ④ 데이터 분석 (데이터 분석 기법 활용)

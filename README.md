@@ -102,6 +102,18 @@ dbClearResult(rs)
 
 ### ④ 데이터 분석 (데이터 분석 기법 활용)
 보험사의 입장에서 주로 보험을 구매하는 고객층은 3,40대 이다. 그렇다면 3,40대의 주된 사망원인에 대한 보험을 판매하는것이 합리적이다.<br>
+<u>30대 사망원인 빈도</u>
+
+![Rplot02](https://user-images.githubusercontent.com/49007889/59590349-d0d64980-9126-11e9-9869-bb7603662282.png)
+
+![캡처2](https://user-images.githubusercontent.com/49007889/59590358-d59afd80-9126-11e9-9828-843a8928601d.PNG)
+
+
+
+
+![Rplot03](https://user-images.githubusercontent.com/49007889/59590350-d2077680-9126-11e9-96e6-b99ad8630ff3.png)
+
+![캡처](https://user-images.githubusercontent.com/49007889/59590360-d6cc2a80-9126-11e9-8388-ada3ea659eff.PNG)
 
 
 

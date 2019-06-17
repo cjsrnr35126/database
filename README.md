@@ -10,7 +10,21 @@
 
 ### ② 데이터 처리 과정 설명 (데이터 import/export 과정, SQL 문장 등)
 
-통계청에서 데이터를 가져온 다음, 사망원인통계와 질병사인분류코드를 dbWriteTable함수를 이용하여 테이블로 만들었다. <br>
+통계청에서 다운받은 파일이 엑셀이였으므로 xlxs패키지를 사용하여 엑셀파일을 읽은 다음, 사망원인통계와 질병사인분류코드를 dbWriteTable함수를 이용하여 테이블로 만들었다. <br>
+<pre><code>
+#install.packages("xlsx")
+library(xlsx)
+
+code6=read.xlsx2("C:/Users/korea/Desktop/code6.xlsx",1,startRow = 2,header = T)
+head(code6)
+
+db=read.csv("C:/Users/korea/Desktop/db.csv",header = F)
+head(db)
+
+db0=`colnames<-`(db,c("Y","M","D","Age","Sex","death1","death2"))
+head(db0)
+</code></pre>
+
 <pre><code>
 #death code
 #X1= 질병사인코드, X2= 코드명/ X4= KCD, X5= KCD 코드명/X3는 공백
@@ -48,7 +62,9 @@ rs <- dbSendQuery(conn,
                   \'1~4\')")
 dbClearResult(rs)
 </code></pre>
+----------------------
 
-③ 데이터 요약 (요약 통계량, 표/그래프 활용)
+### ③ 데이터 요약 (요약 통계량, 표/그래프 활용)
+
 ④ 데이터 분석 (데이터 분석 기법 활용)
 ⑤ 결론
